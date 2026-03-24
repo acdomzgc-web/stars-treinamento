@@ -12,7 +12,7 @@ export default function Footer() {
               <img
                 src={logoImg}
                 alt="STARS Logo"
-                className="h-20 w-20 rounded-full object-cover border-2 border-primary/40 group-hover:border-primary transition-colors"
+                className="h-20 w-20 rounded-full object-cover border-2 border-primary/40 group-hover:border-primary transition-colors shadow-lg"
               />
               <div className="flex flex-col">
                 <span className="font-black text-3xl tracking-tight text-foreground uppercase">
@@ -25,7 +25,7 @@ export default function Footer() {
             </a>
             <p className="text-muted-foreground mb-8 max-w-sm text-lg leading-relaxed">
               Sistema de treinamento moderno focado em ajudar atletas a evoluírem para a elite
-              esportiva, combinando ciência e experiência prática.
+              esportiva através do modelo de periodização 2:1.
             </p>
             <div className="flex space-x-5">
               <a
@@ -45,39 +45,31 @@ export default function Footer() {
 
           <div className="md:col-span-2">
             <h4 className="font-bold text-lg mb-6 text-foreground uppercase tracking-wider">
-              Programas
+              Assinatura
             </h4>
             <ul className="space-y-4">
               <li>
                 <a
-                  href="#"
+                  href="#programs"
                   className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
-                  CrossFit Competitivo
+                  Planilha Mensal
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#methodology"
                   className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
-                  LPO Especializado
+                  Metodologia 2:1
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#methodology"
                   className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
-                  Condicionamento
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
-                >
-                  Consultoria Online
+                  Estrutura Semanal
                 </a>
               </li>
             </ul>
@@ -88,14 +80,6 @@ export default function Footer() {
               A Empresa
             </h4>
             <ul className="space-y-4">
-              <li>
-                <a
-                  href="#methodology"
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
-                >
-                  Metodologia
-                </a>
-              </li>
               <li>
                 <a
                   href="#founders"

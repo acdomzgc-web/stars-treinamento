@@ -40,24 +40,27 @@ export default function Hero() {
             className="mt-6 text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in-up font-medium"
             style={{ animationDelay: '200ms' }}
           >
-            Sistema de treinamento moderno para academias, crossfit e funcional, projetado por
-            atletas de alto rendimento.
+            Sistema de treinamento moderno com periodização 2:1, projetado para gerenciar fadiga e
+            maximizar sua performance.
           </p>
 
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
             style={{ animationDelay: '300ms' }}
           >
-            <Button size="lg" className="text-lg px-8 py-6 rounded-full group font-bold">
-              Conheça a Metodologia
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button asChild size="lg" className="text-lg px-8 py-6 rounded-full group font-bold">
+              <a href="#programs">
+                Assinar Planilha
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="text-lg px-8 py-6 rounded-full border-primary/30 hover:bg-primary/10 font-bold bg-background/50 backdrop-blur-sm"
             >
-              Ver Resultados
+              <a href="#methodology">Conheça a Metodologia</a>
             </Button>
           </div>
         </div>

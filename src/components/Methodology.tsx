@@ -1,4 +1,5 @@
 import { Dumbbell, Target, Timer, TrendingUp } from 'lucide-react'
+import logoImg from '@/assets/logo-374d7.jpg'
 
 export default function Methodology() {
   const features = [
@@ -29,9 +30,25 @@ export default function Methodology() {
   ]
 
   return (
-    <section id="methodology" className="py-24 bg-secondary/10 border-y border-border">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section
+      id="methodology"
+      className="py-24 bg-secondary/10 border-y border-border relative overflow-hidden"
+    >
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none w-[600px] h-[600px] md:w-[800px] md:h-[800px]">
+        <img
+          src={logoImg}
+          alt="STARS Watermark"
+          className="w-full h-full object-cover rounded-full grayscale mix-blend-multiply"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
+          <img
+            src={logoImg}
+            alt="STARS Logo"
+            className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto mb-8 border-4 border-primary/20 shadow-xl"
+          />
           <h2 className="text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">
             A Nossa <span className="text-primary">Metodologia</span>
           </h2>

@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Metodologia', href: '#methodology' },
-    { name: 'Programas', href: '#programs' },
+    { name: 'Assinatura', href: '#programs' },
     { name: 'Fundadores', href: '#founders' },
   ]
 
@@ -55,8 +55,11 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full px-6">
-                Comece Agora
+              <Button
+                asChild
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full px-6"
+              >
+                <a href="#programs">Comece Agora</a>
               </Button>
             </div>
           </div>
@@ -74,10 +77,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background border-b border-border absolute w-full left-0 top-full">
-          <div className="px-4 pt-2 pb-6 space-y-2 shadow-xl">
+        <div className="md:hidden bg-background border-b border-border absolute w-full left-0 top-full shadow-xl">
+          <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -89,8 +91,13 @@ export default function Navbar() {
               </a>
             ))}
             <div className="pt-4">
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold h-12">
-                Comece Agora
+              <Button
+                asChild
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold h-12"
+              >
+                <a href="#programs" onClick={() => setIsMobileMenuOpen(false)}>
+                  Comece Agora
+                </a>
               </Button>
             </div>
           </div>
