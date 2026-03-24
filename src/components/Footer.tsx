@@ -1,92 +1,159 @@
-import { Link } from 'react-router-dom'
-import { Instagram, Youtube, Mail } from 'lucide-react'
+import { Instagram, Mail, MapPin } from 'lucide-react'
+import logoImg from '@/assets/logo-374d7.jpg'
 
-const LOGO_URL =
-  'https://storage.googleapis.com/skip-app-production-bucket/user-attachments/af27e25d-6a45-491b-a52b-d3f49195a037/10b27af8-2c2d-4581-9b16-92c483a90623'
-
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="col-span-1 md:col-span-2">
-            <img src={LOGO_URL} alt="STARS Elite" className="h-16 w-auto mb-6" />
-            <p className="text-muted-foreground max-w-md">
-              O sistema de treinamento definitivo para evoluir atletas de Academia, CrossFit e
-              Funcional para o status de elite. Desenvolvido por Ricardo Marquez e Allan Pereira.
+    <footer className="bg-secondary/20 border-t border-border pt-20 pb-10 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          <div className="md:col-span-5">
+            <a href="#" className="flex items-center gap-4 mb-6 group">
+              <img
+                src={logoImg}
+                alt="STARS Logo"
+                className="h-20 w-20 rounded-full object-cover border-2 border-primary/40 group-hover:border-primary transition-colors"
+              />
+              <div className="flex flex-col">
+                <span className="font-black text-3xl tracking-tight text-foreground uppercase">
+                  STARS
+                </span>
+                <span className="text-primary font-bold tracking-widest text-sm uppercase">
+                  Treinamento Elite
+                </span>
+              </div>
+            </a>
+            <p className="text-muted-foreground mb-8 max-w-sm text-lg leading-relaxed">
+              Sistema de treinamento moderno focado em ajudar atletas a evoluírem para a elite
+              esportiva, combinando ciência e experiência prática.
             </p>
+            <div className="flex space-x-5">
+              <a
+                href="#"
+                className="p-3 rounded-full bg-background border border-border hover:border-primary hover:text-primary transition-all group"
+              >
+                <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="#"
+                className="p-3 rounded-full bg-background border border-border hover:border-primary hover:text-primary transition-all group"
+              >
+                <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              </a>
+            </div>
           </div>
 
-          <div>
-            <h4 className="text-lg font-bold uppercase tracking-wider mb-4 text-foreground">
-              Links Rápidos
+          <div className="md:col-span-2">
+            <h4 className="font-bold text-lg mb-6 text-foreground uppercase tracking-wider">
+              Programas
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
                 <a
-                  href="#metodologia"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  CrossFit Competitivo
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  LPO Especializado
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  Condicionamento
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  Consultoria Online
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <h4 className="font-bold text-lg mb-6 text-foreground uppercase tracking-wider">
+              A Empresa
+            </h4>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="#methodology"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
                   Metodologia
                 </a>
               </li>
               <li>
                 <a
-                  href="#fundadores"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  href="#founders"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
                   Fundadores
                 </a>
               </li>
               <li>
                 <a
-                  href="#programas"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
-                  Programas & Planilhas
+                  Resultados
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  Contato
                 </a>
               </li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-lg font-bold uppercase tracking-wider mb-4 text-foreground">
+          <div className="md:col-span-3">
+            <h4 className="font-bold text-lg mb-6 text-foreground uppercase tracking-wider">
               Contato
             </h4>
-            <div className="flex space-x-4 mb-6">
-              <a
-                href="#"
-                className="h-10 w-10 bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors group"
-              >
-                <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              </a>
-              <a
-                href="#"
-                className="h-10 w-10 bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors group"
-              >
-                <Youtube className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              </a>
-              <a
-                href="#"
-                className="h-10 w-10 bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors group"
-              >
-                <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              </a>
-            </div>
-            <p className="text-muted-foreground text-sm">contato@starselite.com.br</p>
+            <ul className="space-y-5">
+              <li className="flex items-start gap-4 text-muted-foreground bg-background/50 p-4 rounded-xl border border-border/50">
+                <MapPin className="h-6 w-6 shrink-0 mt-0.5 text-primary" />
+                <span className="font-medium">
+                  Atendimento Global
+                  <br />
+                  <span className="text-sm opacity-80">Online & Presencial</span>
+                </span>
+              </li>
+              <li className="flex items-center gap-4 text-muted-foreground bg-background/50 p-4 rounded-xl border border-border/50">
+                <Mail className="h-6 w-6 shrink-0 text-primary" />
+                <span className="font-medium truncate">contato@starstreinamento.com</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between">
+          <p className="text-muted-foreground text-sm font-medium mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} STARS Treinamento Elite. Todos os direitos reservados.
           </p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-foreground transition-colors">
-              Termos de Uso
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
+          <div className="flex space-x-6 text-sm font-medium">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
               Privacidade
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              Termos de Uso
             </a>
           </div>
         </div>

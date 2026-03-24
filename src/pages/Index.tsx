@@ -1,20 +1,21 @@
-/* Home Page - Assembles all the specific sections for the STARS Elite landing page */
-import { Hero } from '@/components/Hero'
-import { Methodology } from '@/components/Methodology'
-import { Founders } from '@/components/Founders'
-import { Programs } from '@/components/Programs'
-import { Gallery } from '@/components/Gallery'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import Methodology from '@/components/Methodology'
+import Programs from '@/components/Programs'
+import Founders from '@/components/Founders'
+import Footer from '@/components/Footer'
 
-const Index = () => {
+export default function Index() {
   return (
-    <div className="flex flex-col w-full">
-      <Hero />
-      <Methodology />
-      <Gallery />
-      <Founders />
-      <Programs />
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+      <Navbar />
+      <main>
+        <Hero />
+        <Methodology />
+        <Programs />
+        <Founders />
+      </main>
+      <Footer />
     </div>
   )
 }
-
-export default Index

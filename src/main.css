@@ -1,248 +1,84 @@
-/* Global styles - Theme, font, utilities, animations and global components */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* STARS Elite Theme - Dark Blue & Cream */
-    --background: 212 53% 8%;
-    --foreground: 37 45% 89%;
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
 
-    --card: 219 37% 12%;
-    --card-foreground: 37 45% 89%;
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 212 53% 8%;
-    --popover-foreground: 37 45% 89%;
+    --popover: 222 47% 7%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 37 45% 89%;
-    --primary-foreground: 212 53% 8%;
+    /* Brand primary: Logo background blue ~ #4a789c */
+    --primary: 206 36% 45%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 219 37% 17%;
-    --secondary-foreground: 37 45% 89%;
+    /* Brand secondary: Panther dark blue ~ #0e172e */
+    --secondary: 223 53% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 219 37% 20%;
-    --muted-foreground: 219 20% 65%;
+    /* Brand accent: Logo text beige ~ #eee6d8 */
+    --accent: 40 38% 89%;
+    --accent-foreground: 223 53% 12%;
 
-    --accent: 219 37% 25%;
-    --accent-foreground: 37 45% 89%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 219 37% 20%;
-    --input: 219 37% 20%;
-    --ring: 37 45% 89%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 206 36% 45%;
 
-    --radius: 0.25rem;
-
-    --sidebar-background: 212 53% 8%;
-    --sidebar-foreground: 37 45% 89%;
-    --sidebar-primary: 37 45% 89%;
-    --sidebar-primary-foreground: 212 53% 8%;
-    --sidebar-accent: 219 37% 17%;
-    --sidebar-accent-foreground: 37 45% 89%;
-    --sidebar-border: 219 37% 20%;
-    --sidebar-ring: 37 45% 89%;
-
-    --chart-1: 37 45% 89%;
-    --chart-2: 219 37% 40%;
-    --chart-3: 219 37% 30%;
-    --chart-4: 219 37% 20%;
-    --chart-5: 212 53% 15%;
+    --radius: 0.5rem;
   }
+}
 
-  .dark {
-    /* Same theme for dark mode to force the brand identity */
-    --background: 212 53% 8%;
-    --foreground: 37 45% 89%;
-    --card: 219 37% 12%;
-    --card-foreground: 37 45% 89%;
-    --popover: 212 53% 8%;
-    --popover-foreground: 37 45% 89%;
-    --primary: 37 45% 89%;
-    --primary-foreground: 212 53% 8%;
-    --secondary: 219 37% 17%;
-    --secondary-foreground: 37 45% 89%;
-    --muted: 219 37% 20%;
-    --muted-foreground: 219 20% 65%;
-    --accent: 219 37% 25%;
-    --accent-foreground: 37 45% 89%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 219 37% 20%;
-    --input: 219 37% 20%;
-    --ring: 37 45% 89%;
-    --radius: 0.25rem;
+@layer base {
+  * {
+    @apply border-border;
   }
-
   body {
-    @apply font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Oswald', sans-serif;
-  }
-
-  /* NEVER REMOVE THIS */
-  section[aria-label='Notifications alt+T'] {
-    padding: 0 !important;
-    margin: 0 !important;
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+    scroll-behavior: smooth;
   }
 }
 
 @layer utilities {
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade-out {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-
-  @keyframes fade-in-up {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade-in-down {
-    from {
-      transform: translateY(-20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-up {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-down {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes spotlight {
-    from {
-      opacity: 0;
-      transform: translate(-72%, -62%) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -40%) scale(1);
-    }
-  }
-
-  .animate-accordion-down {
-    animation: accordion-down 0.2s ease-out;
-  }
-  .animate-accordion-up {
-    animation: accordion-up 0.2s ease-out;
-  }
   .animate-fade-in {
-    animation: fade-in 0.5s ease-out;
-  }
-  .animate-fade-out {
-    animation: fade-out 0.5s ease-out;
-  }
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  .animate-fade-in-down {
-    animation: fade-in-down 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  .animate-slide-up {
-    animation: slide-up 0.6s ease-out forwards;
-  }
-  .animate-slide-down {
-    animation: slide-down 0.6s ease-out forwards;
-  }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  .animate-spotlight {
-    animation: spotlight 2s ease forwards;
+    animation: fadeIn 0.5s ease-out forwards;
   }
 
-  /* Stagger delays for multiple items */
-  .delay-100 {
-    animation-delay: 100ms;
+  .animate-fade-in-up {
+    animation: fadeInUp 0.7s ease-out forwards;
+    opacity: 0;
   }
-  .delay-200 {
-    animation-delay: 200ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  .delay-300 {
-    animation-delay: 300ms;
+  to {
+    opacity: 1;
   }
-  .delay-400 {
-    animation-delay: 400ms;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

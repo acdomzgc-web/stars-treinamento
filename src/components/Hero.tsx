@@ -1,77 +1,75 @@
+import { ArrowRight, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { ChevronRight } from 'lucide-react'
+import logoImg from '@/assets/logo-374d7.jpg'
 
-const LOGO_URL =
-  'https://storage.googleapis.com/skip-app-production-bucket/user-attachments/af27e25d-6a45-491b-a52b-d3f49195a037/10b27af8-2c2d-4581-9b16-92c483a90623'
-
-export function Hero() {
-  const scrollToPrograms = () => {
-    document.querySelector('#programas')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const scrollToMethodology = () => {
-    document.querySelector('#metodologia')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
+export default function Hero() {
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden pt-20 border-b border-border">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-secondary/80 z-10" />
         <img
-          src="https://img.usecurling.com/p/1920/1080?q=crossfit%20gym%20dark&color=black&dpr=2"
-          alt="Gym Environment"
-          className="w-full h-full object-cover opacity-30 mix-blend-overlay"
-          crossOrigin="anonymous"
+          src="https://img.usecurling.com/p/1920/1080?q=crossfit%20gym"
+          alt="CrossFit Gym"
+          className="w-full h-full object-cover opacity-20 mix-blend-overlay grayscale"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(242,231,213,0.05)_0%,transparent_50%)]" />
       </div>
 
-      <div className="container relative z-10 text-center px-4 md:px-6 mt-10">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <div className="opacity-0 animate-fade-in-up">
-            <img
-              src={LOGO_URL}
-              alt="STARS Elite Logo"
-              className="w-40 md:w-56 lg:w-64 mx-auto mb-8 drop-shadow-[0_0_30px_rgba(242,231,213,0.15)] filter contrast-125"
-              crossOrigin="anonymous"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-              }}
-            />
+      <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8 flex justify-center animate-fade-in-up">
+            <div className="relative inline-block group">
+              <div className="absolute inset-0 bg-primary/30 blur-2xl rounded-full group-hover:bg-primary/50 transition-all duration-500" />
+              <img
+                src={logoImg}
+                alt="STARS Treinamento Elite"
+                className="relative w-36 h-36 md:w-48 md:h-48 object-cover rounded-full border-4 border-primary shadow-2xl transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
           </div>
 
-          <h1 className="opacity-0 animate-fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tighter mb-6 text-foreground drop-shadow-2xl leading-[0.9]">
-            Torne-se sua <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/60">
-              Melhor Versão
-            </span>
+          <h1
+            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 animate-fade-in-up uppercase"
+            style={{ animationDelay: '100ms' }}
+          >
+            <span className="block text-foreground drop-shadow-sm">Alcance a</span>
+            <span className="block text-primary drop-shadow-sm mt-2">Elite do Esporte</span>
           </h1>
 
-          <p className="opacity-0 animate-fade-in-up delay-200 mx-auto max-w-2xl text-lg md:text-xl lg:text-2xl text-muted-foreground mb-12 font-medium">
-            O sistema definitivo de treinamento para quem busca evoluir para a elite no CrossFit,
-            Treinamento Funcional e Academia.
+          <p
+            className="mt-6 text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in-up font-medium"
+            style={{ animationDelay: '200ms' }}
+          >
+            Sistema de treinamento moderno para academias, crossfit e funcional, projetado por
+            atletas de alto rendimento.
           </p>
 
-          <div className="opacity-0 animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto">
-            <Button
-              size="lg"
-              className="text-lg px-8 py-7 uppercase font-bold tracking-widest group rounded-none"
-              onClick={scrollToPrograms}
-            >
-              Começar Treinamento
-              <ChevronRight className="ml-2 h-6 w-6 group-hover:translate-x-1.5 transition-transform" />
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
+            style={{ animationDelay: '300ms' }}
+          >
+            <Button size="lg" className="text-lg px-8 py-6 rounded-full group font-bold">
+              Conheça a Metodologia
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-7 uppercase font-bold tracking-widest rounded-none border-2 hover:bg-secondary"
-              onClick={scrollToMethodology}
+              className="text-lg px-8 py-6 rounded-full border-primary/30 hover:bg-primary/10 font-bold bg-background/50 backdrop-blur-sm"
             >
-              A Metodologia
+              Ver Resultados
             </Button>
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+        <a
+          href="#methodology"
+          className="text-muted-foreground hover:text-primary transition-colors p-2 bg-background/50 rounded-full backdrop-blur-sm border border-border/50"
+        >
+          <ChevronDown className="h-6 w-6" />
+        </a>
       </div>
     </section>
   )

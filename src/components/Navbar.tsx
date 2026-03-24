@@ -1,117 +1,101 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import logoImg from '@/assets/logo-374d7.jpg'
 
-const LOGO_URL =
-  'https://storage.googleapis.com/skip-app-production-bucket/user-attachments/af27e25d-6a45-491b-a52b-d3f49195a037/10b27af8-2c2d-4581-9b16-92c483a90623'
-
-export function Navbar() {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const navLinks = [
-    { name: 'Metodologia', href: '#metodologia' },
-    { name: 'Fundadores', href: '#fundadores' },
-    { name: 'Programas', href: '#programas' },
+    { name: 'Metodologia', href: '#methodology' },
+    { name: 'Programas', href: '#programs' },
+    { name: 'Fundadores', href: '#founders' },
   ]
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    setMobileMenuOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent',
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md border-border py-3 shadow-lg'
-          : 'bg-transparent py-5',
-      )}
+          ? 'bg-background/95 backdrop-blur-md shadow-sm border-b border-border/50 py-3'
+          : 'bg-transparent py-5'
+      }`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link
-          to="/"
-          className="flex items-center gap-2 z-50"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <img src={LOGO_URL} alt="STARS Elite" className="h-10 md:h-12 w-auto object-contain" />
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-semibold uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors"
-            >
-              {link.name}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <div className="flex-shrink-0">
+            <a href="#" className="flex items-center gap-3 group">
+              <img
+                src={logoImg}
+                alt="STARS Logo"
+                className="h-12 w-12 rounded-full object-cover border-2 border-primary/40 group-hover:border-primary transition-colors duration-300"
+              />
+              <span className="font-extrabold text-xl tracking-tight text-foreground uppercase group-hover:text-primary transition-colors">
+                STARS Elite
+              </span>
             </a>
-          ))}
-          <Button
-            className="uppercase font-bold tracking-wider rounded-none"
-            onClick={() =>
-              document.querySelector('#programas')?.scrollIntoView({ behavior: 'smooth' })
-            }
-          >
-            Acessar Planilha
-          </Button>
-        </nav>
+          </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden z-50 text-foreground p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-foreground/80 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wider"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full px-6">
+                Comece Agora
+              </Button>
+            </div>
+          </div>
 
-        {/* Mobile Navigation */}
-        <div
-          className={cn(
-            'fixed inset-0 bg-background flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out md:hidden z-40',
-            mobileMenuOpen ? 'translate-y-0' : '-translate-y-full',
-          )}
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-2xl font-bold uppercase tracking-widest text-foreground hover:text-primary transition-colors"
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-foreground"
             >
-              {link.name}
-            </a>
-          ))}
-          <Button
-            size="lg"
-            className="uppercase font-bold tracking-wider mt-4 rounded-none w-[80%] max-w-sm"
-            onClick={() => {
-              setMobileMenuOpen(false)
-              document.querySelector('#programas')?.scrollIntoView({ behavior: 'smooth' })
-            }}
-          >
-            Acessar Planilha
-          </Button>
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
       </div>
-    </header>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-background border-b border-border absolute w-full left-0 top-full">
+          <div className="px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-foreground/80 hover:text-primary block px-3 py-3 rounded-md text-base font-bold uppercase tracking-wider border-b border-border/50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+            <div className="pt-4">
+              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold h-12">
+                Comece Agora
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
   )
 }

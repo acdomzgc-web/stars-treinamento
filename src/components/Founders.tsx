@@ -1,101 +1,210 @@
+import ricardoImg from '@/assets/ricardo-78498.png'
+import allanImg from '@/assets/allan-3a68b.png'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { Trophy, Award, GraduationCap, Target } from 'lucide-react'
 
-const RICARDO_IMG =
-  'https://storage.googleapis.com/skip-app-production-bucket/user-attachments/af27e25d-6a45-491b-a52b-d3f49195a037/88a291d9-e31b-4cd3-a006-8dce2fc5cce3'
-const ALLAN_IMG =
-  'https://storage.googleapis.com/skip-app-production-bucket/user-attachments/af27e25d-6a45-491b-a52b-d3f49195a037/f3da2f63-1250-484d-ba90-50bba20d6f45'
+export default function Founders() {
+  const ricardoAchievements = [
+    'Atleta bolsista (Full Tuition) na East Tennessee State University',
+    '3º lugar no Campeonato Nacional Sub-25 dos Estados Unidos (até 89kg)',
+    '4º lugar no snatch no campeonato universitário dos EUA',
+    'Classificado para o American Open Finals 2024',
+    'Campeão do Stone Age Weightlifting 2024 e do Handle Barbell 2025 (até 89kg)',
+    '2º lugar no LPO Sul e 2º lugar no Campeonato Gaúcho sub-16',
+    'Bicampeão do Legacy Series (2024 e 2025)',
+    'Vice-campeão do BOP Games 2024',
+    'Campeão da CF League em equipes (2026)',
+    'Atleta semifinalista mundial (102º lugar na semifinal online de 2025)',
+    'Wodapalooza RX: 11º lugar (2024) e 7º lugar (2025)',
+    'NorCal Classic 2025 (30º lugar)',
+    'Semifinalista por equipes no TFX 2025 (CrossFit Kinesis Black)',
+    'Atleta convidado para o Brasília Fitness Open 2025',
+  ]
 
-export function Founders() {
   return (
-    <section id="fundadores" className="py-24 bg-secondary/20 border-b border-border">
-      <div className="container px-4">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <p className="text-primary font-bold uppercase tracking-widest mb-3">Liderança</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight mb-6 text-foreground">
-            A Elite por trás do STARS
+    <section id="founders" className="py-24 bg-background relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-secondary/20 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <Badge
+            variant="outline"
+            className="mb-6 border-primary text-primary px-5 py-2 text-sm uppercase tracking-widest font-bold bg-primary/5"
+          >
+            Nossos Fundadores
+          </Badge>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6 uppercase">
+            Liderança <span className="text-primary">Comprovada</span>
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl">
-            Metodologia forjada na prática por atletas e treinadores que respiram alta performance
-            todos os dias. Não ensinamos o que lemos, ensinamos o que vivemos na arena.
+          <p className="text-xl text-muted-foreground font-medium">
+            Conheça a trajetória e o conhecimento prático dos atletas e treinadores que construíram
+            a metodologia STARS.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-          {/* Ricardo Card */}
-          <Card className="overflow-hidden border-border bg-background rounded-none hover:border-primary/40 transition-colors duration-500 group">
-            <div className="aspect-[4/5] sm:aspect-square relative overflow-hidden">
-              <img
-                src={RICARDO_IMG}
-                alt="Ricardo Marquez"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out filter contrast-110 saturate-50 group-hover:saturate-100"
-                crossOrigin="anonymous"
-                onError={(e) => {
-                  if (!e.currentTarget.src.includes('img.usecurling.com')) {
-                    e.currentTarget.src =
-                      'https://img.usecurling.com/p/800/800?q=coach&color=black&dpr=2'
-                  }
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <Badge className="mb-3 bg-primary text-primary-foreground hover:bg-primary font-bold rounded-sm uppercase tracking-wider text-xs">
-                  Co-Founder & Head Coach
-                </Badge>
-                <h3 className="text-3xl font-extrabold uppercase text-foreground mb-2 drop-shadow-md">
-                  Ricardo Marquez
-                </h3>
-                <p className="text-muted-foreground text-sm uppercase tracking-widest font-semibold">
-                  O Estrategista
-                </p>
+        <div className="space-y-32">
+          {/* Ricardo Marquez Profile */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div className="lg:col-span-5 relative group">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-700" />
+              <div className="relative rounded-[2rem] overflow-hidden aspect-[3/4] border-2 border-border shadow-2xl bg-card">
+                <img
+                  src={ricardoImg}
+                  alt="Ricardo Marquez"
+                  className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90" />
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <h3 className="text-4xl font-black text-foreground mb-2 tracking-tight uppercase">
+                    Ricardo Marquez
+                  </h3>
+                  <p className="text-primary font-bold text-xl tracking-wide">
+                    Co-fundador & Head Coach
+                  </p>
+                </div>
               </div>
             </div>
-            <CardContent className="pt-8 pb-8 px-6 sm:px-8">
-              <p className="text-muted-foreground leading-relaxed">
-                Especialista em extrair o máximo do potencial humano. Com vasta experiência no
-                cenário competitivo de CrossFit, Ricardo desenvolveu os pilares do sistema STARS
-                focando em força bruta, técnica refinada e, acima de tudo, uma mentalidade
-                inabalável.
-              </p>
-            </CardContent>
-          </Card>
 
-          {/* Allan Card */}
-          <Card className="overflow-hidden border-border bg-background rounded-none hover:border-primary/40 transition-colors duration-500 group">
-            <div className="aspect-[4/5] sm:aspect-square relative overflow-hidden">
-              <img
-                src={ALLAN_IMG}
-                alt="Allan Pereira"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out filter contrast-110 saturate-50 group-hover:saturate-100"
-                crossOrigin="anonymous"
-                onError={(e) => {
-                  if (!e.currentTarget.src.includes('img.usecurling.com')) {
-                    e.currentTarget.src =
-                      'https://img.usecurling.com/p/800/800?q=crossfit%20athlete&color=black&dpr=2'
-                  }
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <Badge className="mb-3 bg-primary text-primary-foreground hover:bg-primary font-bold rounded-sm uppercase tracking-wider text-xs">
-                  Co-Founder & Elite Athlete
-                </Badge>
-                <h3 className="text-3xl font-extrabold uppercase text-foreground mb-2 drop-shadow-md">
+            <div className="lg:col-span-7 space-y-10">
+              <div className="prose prose-lg dark:prose-invert max-w-none">
+                <p className="text-2xl leading-relaxed text-foreground/90 font-medium border-l-4 border-primary pl-6 py-2">
+                  Atleta e coach de CrossFit e levantamento de peso olímpico, com 11 anos de
+                  experiência no esporte (desde os 14 anos). Ao longo da minha trajetória, construí
+                  resultados relevantes tanto no cenário nacional quanto internacional, competindo
+                  em alto nível nas duas modalidades.
+                </p>
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2">
+                <Card className="bg-secondary/20 border-border hover:border-primary/50 transition-colors">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-4 mb-5">
+                      <div className="p-3 bg-primary rounded-xl text-primary-foreground shadow-lg">
+                        <Award className="w-7 h-7" />
+                      </div>
+                      <h4 className="font-bold text-xl uppercase tracking-wide">Certificações</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed font-medium text-base">
+                      Certificado CrossFit Level 1. Ex-coach nas afiliadas CrossFit Cygnus
+                      (Richmond, Kentucky) e CrossFit Thunder Valley (Johnson City, Tennessee).
+                      Fundador e head coach da STARS Treinamento.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="bg-secondary/20 border-border hover:border-primary/50 transition-colors">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-4 mb-5">
+                      <div className="p-3 bg-primary rounded-xl text-primary-foreground shadow-lg">
+                        <GraduationCap className="w-7 h-7" />
+                      </div>
+                      <h4 className="font-bold text-xl uppercase tracking-wide">Formação</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed font-medium text-base">
+                      Atleta bolsista (Full Tuition) na East Tennessee State University. Competidor
+                      em nível universitário nos Estados Unidos, imerso em uma das melhores escolas
+                      de LPO.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="bg-card rounded-3xl p-8 lg:p-10 border border-border shadow-xl">
+                <h4 className="flex items-center gap-3 text-2xl font-black mb-8 border-b border-border pb-4 uppercase">
+                  <Trophy className="w-8 h-8 text-primary" />
+                  Principais Conquistas
+                </h4>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                  {ricardoAchievements.map((achievement, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-4 text-base text-muted-foreground font-medium"
+                    >
+                      <Target className="w-5 h-5 shrink-0 mt-0.5 text-primary" />
+                      <span className="leading-snug">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+          {/* Allan Pereira Profile */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-7 order-2 lg:order-1 space-y-10">
+              <div className="prose prose-lg dark:prose-invert max-w-none">
+                <h3 className="text-4xl md:text-5xl font-black text-foreground mb-3 hidden lg:block uppercase tracking-tight">
                   Allan Pereira
                 </h3>
-                <p className="text-muted-foreground text-sm uppercase tracking-widest font-semibold">
-                  O Competidor
+                <p className="text-primary font-bold text-xl mb-8 hidden lg:block tracking-wide">
+                  Co-fundador & Coach Especialista
+                </p>
+                <p className="text-2xl leading-relaxed text-foreground/90 font-medium border-l-4 border-primary pl-6 py-2">
+                  Graduado em Educação Física pela Tuitia do Paraná desde 2018. Coach da Essar e
+                  co-fundador da STARS Treinamento, combinando embasamento acadêmico com excelência
+                  prática.
                 </p>
               </div>
+
+              <div className="grid gap-6">
+                <Card className="bg-secondary/20 border-border hover:border-primary/50 transition-colors">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-4 mb-5">
+                      <div className="p-3 bg-primary rounded-xl text-primary-foreground shadow-lg">
+                        <Target className="w-7 h-7" />
+                      </div>
+                      <h4 className="font-bold text-xl uppercase tracking-wide">Especializações</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-lg font-medium">
+                      Especialista em levantamento de peso olímpico (LPO), core training, kettlebell
+                      training e High-Intensity Interval Training (HIIT).
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-secondary/20 border-border hover:border-primary/50 transition-colors">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-4 mb-5">
+                      <div className="p-3 bg-primary rounded-xl text-primary-foreground shadow-lg">
+                        <Trophy className="w-7 h-7" />
+                      </div>
+                      <h4 className="font-bold text-xl uppercase tracking-wide">
+                        Experiência Atlética
+                      </h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-lg font-medium">
+                      Atleta de CrossFit competitivo desde 2018, com participação marcante em três
+                      edições do PCB (Powerade CrossFit Brazil) e do renomado torneio Copa Sur.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
-            <CardContent className="pt-8 pb-8 px-6 sm:px-8">
-              <p className="text-muted-foreground leading-relaxed">
-                Atleta de elite provando o método na prática, dia após dia. Allan traz a vivência
-                real da arena para as planilhas, garantindo que cada treino prepare você não apenas
-                fisicamente, mas mentalmente para os rigores do condicionamento extremo.
-              </p>
-            </CardContent>
-          </Card>
+
+            <div className="lg:col-span-5 order-1 lg:order-2 relative group">
+              <div className="absolute -inset-4 bg-gradient-to-bl from-primary/30 to-secondary/30 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-700" />
+              <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] lg:aspect-[3/4] border-2 border-border shadow-2xl bg-card">
+                <img
+                  src={allanImg}
+                  alt="Allan Pereira"
+                  className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90 lg:hidden" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 lg:hidden">
+                  <h3 className="text-4xl font-black text-foreground mb-2 tracking-tight uppercase">
+                    Allan Pereira
+                  </h3>
+                  <p className="text-primary font-bold text-xl tracking-wide">
+                    Co-fundador & Coach Especialista
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
