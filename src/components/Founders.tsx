@@ -29,6 +29,13 @@ export function Founders() {
                 src={RICARDO_IMG}
                 alt="Ricardo Marquez"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out filter contrast-110 saturate-50 group-hover:saturate-100"
+                crossOrigin="anonymous"
+                onError={(e) => {
+                  if (!e.currentTarget.src.includes('img.usecurling.com')) {
+                    e.currentTarget.src =
+                      'https://img.usecurling.com/p/800/800?q=coach&color=black&dpr=2'
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90" />
               <div className="absolute bottom-6 left-6 right-6">
@@ -60,6 +67,13 @@ export function Founders() {
                 src={ALLAN_IMG}
                 alt="Allan Pereira"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out filter contrast-110 saturate-50 group-hover:saturate-100"
+                crossOrigin="anonymous"
+                onError={(e) => {
+                  if (!e.currentTarget.src.includes('img.usecurling.com')) {
+                    e.currentTarget.src =
+                      'https://img.usecurling.com/p/800/800?q=crossfit%20athlete&color=black&dpr=2'
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90" />
               <div className="absolute bottom-6 left-6 right-6">

@@ -8,22 +8,31 @@ const images = [
     src: 'https://img.usecurling.com/p/800/800?q=crossfit%20box&color=black&dpr=2',
     span: 'col-span-1 md:col-span-2 row-span-2',
     alt: 'Crossfit Training',
+    fallback: 'https://img.usecurling.com/p/800/800?q=crossfit%20gym&color=black&dpr=2',
   },
-  { src: ALLAN_IMG, span: 'col-span-1 row-span-1', alt: 'Allan Pereira Lifting' },
+  {
+    src: ALLAN_IMG,
+    span: 'col-span-1 row-span-1',
+    alt: 'Allan Pereira Lifting',
+    fallback: 'https://img.usecurling.com/p/800/800?q=crossfit%20athlete&color=black&dpr=2',
+  },
   {
     src: 'https://img.usecurling.com/p/800/600?q=weightlifting%20barbell&color=black&dpr=2',
     span: 'col-span-1 row-span-1',
     alt: 'Weightlifting',
+    fallback: 'https://img.usecurling.com/p/800/600?q=weights&color=black&dpr=2',
   },
   {
     src: 'https://img.usecurling.com/p/600/800?q=kettlebell%20workout&color=black&dpr=2',
     span: 'col-span-1 row-span-2',
     alt: 'Kettlebell',
+    fallback: 'https://img.usecurling.com/p/600/800?q=kettlebell&color=black&dpr=2',
   },
   {
     src: RICARDO_IMG,
     span: 'col-span-1 md:col-span-2 row-span-1',
     alt: 'Ricardo Marquez Coaching',
+    fallback: 'https://img.usecurling.com/p/800/800?q=coach&color=black&dpr=2',
   },
 ]
 
@@ -38,6 +47,12 @@ export function Gallery() {
               src={img.src}
               alt={img.alt}
               className="w-full h-full object-cover object-center filter grayscale-[30%] contrast-125 group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+              crossOrigin="anonymous"
+              onError={(e) => {
+                if (e.currentTarget.src !== img.fallback) {
+                  e.currentTarget.src = img.fallback
+                }
+              }}
             />
             <div className="absolute inset-0 bg-background/40 group-hover:bg-background/10 transition-colors duration-500" />
 

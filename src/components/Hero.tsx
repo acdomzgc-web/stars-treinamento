@@ -21,6 +21,7 @@ export function Hero() {
           src="https://img.usecurling.com/p/1920/1080?q=crossfit%20gym%20dark&color=black&dpr=2"
           alt="Gym Environment"
           className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+          crossOrigin="anonymous"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(242,231,213,0.05)_0%,transparent_50%)]" />
@@ -33,6 +34,10 @@ export function Hero() {
               src={LOGO_URL}
               alt="STARS Elite Logo"
               className="w-40 md:w-56 lg:w-64 mx-auto mb-8 drop-shadow-[0_0_30px_rgba(242,231,213,0.15)] filter contrast-125"
+              crossOrigin="anonymous"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+              }}
             />
           </div>
 

@@ -61,6 +61,13 @@ export function Programs() {
                 src="https://img.usecurling.com/p/800/800?q=training%20gym%20intensity&color=black&dpr=2"
                 alt="Treinamento Intenso"
                 className="w-full h-full object-cover filter contrast-125 saturate-50"
+                crossOrigin="anonymous"
+                onError={(e) => {
+                  if (!e.currentTarget.src.includes('color=black')) {
+                    e.currentTarget.src =
+                      'https://img.usecurling.com/p/800/800?q=workout&color=black&dpr=2'
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-primary/20 mix-blend-multiply" />
 
