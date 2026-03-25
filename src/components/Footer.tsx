@@ -29,13 +29,15 @@ export default function Footer() {
             </p>
             <div className="flex space-x-5">
               <a
-                href="#"
+                href="https://www.instagram.com/stars.treinamento/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-background border border-border hover:border-primary hover:text-primary transition-all group"
               >
                 <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="#"
+                href="mailto:contato@starstreinamento.com"
                 className="p-3 rounded-full bg-background border border-border hover:border-primary hover:text-primary transition-all group"
               >
                 <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -98,7 +100,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://wa.me/5541996614962"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
                   Contato
@@ -122,7 +126,12 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-4 text-muted-foreground bg-background/50 p-4 rounded-xl border border-border/50">
                 <Mail className="h-6 w-6 shrink-0 text-primary" />
-                <span className="font-medium truncate">contato@starstreinamento.com</span>
+                <a
+                  href="mailto:contato@starstreinamento.com"
+                  className="font-medium truncate hover:text-primary transition-colors"
+                >
+                  contato@starstreinamento.com
+                </a>
               </li>
             </ul>
           </div>

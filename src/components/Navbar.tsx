@@ -59,7 +59,9 @@ export default function Navbar() {
                 asChild
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full px-6"
               >
-                <a href="#programs">Comece Agora</a>
+                <a href="https://wa.me/5541996614962" target="_blank" rel="noopener noreferrer">
+                  Comece Agora
+                </a>
               </Button>
             </div>
           </div>
@@ -95,7 +97,12 @@ export default function Navbar() {
                 asChild
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold h-12"
               >
-                <a href="#programs" onClick={() => setIsMobileMenuOpen(false)}>
+                <a
+                  href="https://wa.me/5541996614962"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Comece Agora
                 </a>
               </Button>

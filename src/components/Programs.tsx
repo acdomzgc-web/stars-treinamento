@@ -52,8 +52,13 @@ export default function Programs() {
               ))}
             </ul>
 
-            <Button className="w-full h-16 text-xl font-black uppercase tracking-wide rounded-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-all relative z-10">
-              Assinar Agora
+            <Button
+              asChild
+              className="w-full h-16 text-xl font-black uppercase tracking-wide rounded-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-all relative z-10"
+            >
+              <a href="https://wa.me/5541996614962" target="_blank" rel="noopener noreferrer">
+                Assinar Agora
+              </a>
             </Button>
           </div>
         </div>

@@ -49,7 +49,7 @@ export default function Hero() {
             style={{ animationDelay: '300ms' }}
           >
             <Button asChild size="lg" className="text-lg px-8 py-6 rounded-full group font-bold">
-              <a href="#programs">
+              <a href="https://wa.me/5541996614962" target="_blank" rel="noopener noreferrer">
                 Assinar Planilha
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
