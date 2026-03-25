@@ -37,7 +37,7 @@ export default function Footer() {
                 <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="mailto:contato@starstreinamento.com"
+                href="mailto:sistemadetreinamentostars@gmail.com"
                 className="p-3 rounded-full bg-background border border-border hover:border-primary hover:text-primary transition-all group"
               >
                 <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -127,10 +127,10 @@ export default function Footer() {
               <li className="flex items-center gap-4 text-muted-foreground bg-background/50 p-4 rounded-xl border border-border/50">
                 <Mail className="h-6 w-6 shrink-0 text-primary" />
                 <a
-                  href="mailto:contato@starstreinamento.com"
+                  href="mailto:sistemadetreinamentostars@gmail.com"
                   className="font-medium truncate hover:text-primary transition-colors"
                 >
-                  contato@starstreinamento.com
+                  sistemadetreinamentostars@gmail.com
                 </a>
               </li>
             </ul>
