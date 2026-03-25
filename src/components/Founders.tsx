@@ -61,7 +61,7 @@ export default function Founders() {
                     Ricardo Marquez
                   </h3>
                   <p className="text-primary font-bold text-xl tracking-wide">
-                    Co-fundador & Head Coach
+                    Co-fundador | Head Coach LPO
                   </p>
                 </div>
               </div>
@@ -141,47 +141,33 @@ export default function Founders() {
                   Allan Pereira
                 </h3>
                 <p className="text-primary font-bold text-xl mb-8 hidden lg:block tracking-wide">
-                  Co-fundador & Coach Especialista
+                  Co-fundador | Head Coach Condicionamento
                 </p>
-                <p className="text-2xl leading-relaxed text-foreground/90 font-medium border-l-4 border-primary pl-6 py-2">
-                  Graduado em Educação Física pela Tuitia do Paraná desde 2018. Coach da Essar e
-                  co-fundador da STARS Treinamento, combinando embasamento acadêmico com excelência
-                  prática.
-                </p>
-              </div>
-
-              <div className="grid gap-6">
-                <Card className="bg-secondary/20 border-border hover:border-primary/50 transition-colors">
-                  <CardContent className="p-8">
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="p-3 bg-primary rounded-xl text-primary-foreground shadow-lg">
-                        <Target className="w-7 h-7" />
-                      </div>
-                      <h4 className="font-bold text-xl uppercase tracking-wide">Especializações</h4>
+                <div className="bg-secondary/10 p-8 rounded-3xl border border-border/50 shadow-sm relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-primary" />
+                  <p className="text-xl leading-relaxed text-foreground/90 font-medium">
+                    Allan Pereira, 35 anos, é Formado na Universidade Tuiuti do Paraná Bacharelado
+                    (2018), com sólida atuação no treinamento de alta performance. Possui
+                    especializações nas áreas de Kettlebell Trainer, HIIT e Core Training, com ampla
+                    experiência na preparação física voltada para performance, resistência e
+                    condicionamento extremo. Como atleta, construiu uma carreira de destaque no
+                    cenário competitivo, sendo: Campeão do Monster Games, Campeão da CF League,
+                    Campeão do Braves, Atleta Elite do TCB por três anos consecutivos (2023, 2024 e
+                    2025), Atleta da Copa Sur 2025. Reconhecido como um dos principais nomes do
+                    CrossFit no Paraná e na região Sul do Brasil, Allan se destaca pela intensidade,
+                    disciplina e consistência dentro e fora das competições. Hoje, além de competir
+                    em alto nível, dedica-se a desenvolver atletas e alunos através da metodologia
+                    da Stars, ajudando pessoas a alcançarem alta performance e evolução real.
+                  </p>
+                  <div className="mt-8 pt-6 border-t border-border/50">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                      <Target className="w-5 h-5 text-primary" />
+                      <span className="font-bold tracking-widest uppercase text-primary">
+                        CREF 032265-G/PR
+                      </span>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed text-lg font-medium">
-                      Especialista em levantamento de peso olímpico (LPO), core training, kettlebell
-                      training e High-Intensity Interval Training (HIIT).
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-secondary/20 border-border hover:border-primary/50 transition-colors">
-                  <CardContent className="p-8">
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="p-3 bg-primary rounded-xl text-primary-foreground shadow-lg">
-                        <Trophy className="w-7 h-7" />
-                      </div>
-                      <h4 className="font-bold text-xl uppercase tracking-wide">
-                        Experiência Atlética
-                      </h4>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed text-lg font-medium">
-                      Atleta de CrossFit competitivo desde 2018, com participação marcante em três
-                      edições do PCB (Powerade CrossFit Brazil) e do renomado torneio Copa Sur.
-                    </p>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -199,7 +185,7 @@ export default function Founders() {
                     Allan Pereira
                   </h3>
                   <p className="text-primary font-bold text-xl tracking-wide">
-                    Co-fundador & Coach Especialista
+                    Co-fundador | Head Coach Condicionamento
                   </p>
                 </div>
               </div>
