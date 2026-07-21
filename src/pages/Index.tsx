@@ -5,6 +5,7 @@ import Periodization from '@/components/Periodization'
 import WeeklyStructure from '@/components/WeeklyStructure'
 import Programs from '@/components/Programs'
 import Founders from '@/components/Founders'
+import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 
@@ -19,6 +20,7 @@ export default function Index() {
         <WeeklyStructure />
         <Programs />
         <Founders />
+        <FAQ />
       </main>
       <Footer />
       <WhatsAppButton />
