@@ -6,6 +6,7 @@ import WeeklyStructure from '@/components/WeeklyStructure'
 import Programs from '@/components/Programs'
 import Founders from '@/components/Founders'
 import Footer from '@/components/Footer'
+import { WhatsAppButton } from '@/components/WhatsAppButton'
 
 export default function Index() {
   return (
@@ -20,6 +21,7 @@ export default function Index() {
         <Founders />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
