@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { KIWIFY_CHECKOUT_URL } from '@/lib/constants'
 import logoImg from '@/assets/logo-374d7.jpg'
 
 export default function Navbar() {
@@ -59,7 +60,7 @@ export default function Navbar() {
                 asChild
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-full px-6"
               >
-                <a href="https://wa.me/5541996614962" target="_blank" rel="noopener noreferrer">
+                <a href={KIWIFY_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
                   Comece Agora
                 </a>
               </Button>
@@ -98,7 +99,7 @@ export default function Navbar() {
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold h-12"
               >
                 <a
-                  href="https://wa.me/5541996614962"
+                  href={KIWIFY_CHECKOUT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}

@@ -1,4 +1,5 @@
 import { Instagram, Mail, MapPin } from 'lucide-react'
+import { KIWIFY_CHECKOUT_URL } from '@/lib/constants'
 import logoImg from '@/assets/logo-374d7.jpg'
 
 export default function Footer() {
@@ -100,7 +101,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/5541996614962"
+                  href={KIWIFY_CHECKOUT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors font-medium"

@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { KIWIFY_CHECKOUT_URL } from '@/lib/constants'
 
 export default function Programs() {
   const features = [
@@ -56,7 +57,7 @@ export default function Programs() {
               asChild
               className="w-full h-16 text-xl font-black uppercase tracking-wide rounded-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-all relative z-10"
             >
-              <a href="https://wa.me/5541996614962" target="_blank" rel="noopener noreferrer">
+              <a href={KIWIFY_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
                 Assinar Agora
               </a>
             </Button>

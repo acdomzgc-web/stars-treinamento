@@ -1,5 +1,6 @@
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { KIWIFY_CHECKOUT_URL } from '@/lib/constants'
 import logoImg from '@/assets/logo-374d7.jpg'
 
 export default function Hero() {
@@ -49,7 +50,7 @@ export default function Hero() {
             style={{ animationDelay: '300ms' }}
           >
             <Button asChild size="lg" className="text-lg px-8 py-6 rounded-full group font-bold">
-              <a href="https://wa.me/5541996614962" target="_blank" rel="noopener noreferrer">
+              <a href={KIWIFY_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
                 Assinar Planilha
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
